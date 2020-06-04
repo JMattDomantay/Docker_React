@@ -26,7 +26,5 @@ deploy:
     on :
         branch : master
     #AWS Creds
-    access_key_id: 
-        secure : "$ACCESS_ID"
-    secret_access_key:
-        secure :  "$ACCESS_SECRET"
+    access_key_id : "$ACCESS_ID"
+    secret_access_key : $ACCESS_SECRET"
