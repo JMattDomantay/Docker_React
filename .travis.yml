@@ -13,3 +13,20 @@ before_install:
 
 script:
     - docker run -e CI=true johnmatthewd/docker-reactv1.2 npm run test 
+
+#Once all is good:
+deploy:
+    provider : elasticbeanstalk
+    region : "us-east-2"
+    app : "johnmatthewd_docker-react"
+    env : "JohnmatthewdDockerReact-env"
+    bucket_name : "elasticbeanstalk-us-east-2-413646379915"
+    bucket_path : "johnmatthewd_docker-react"
+    #publish when pushed to master
+    on :
+        branch : master
+    #AWS Creds
+    access_key_id: 
+        secure : "$ACCESS_ID"
+    secret_access_key:
+        secure :  "$ACCESS_SECRET"
