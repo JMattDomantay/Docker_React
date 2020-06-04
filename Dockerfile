@@ -19,8 +19,10 @@ RUN npm run build
 # /app/build ===> production face of the project
 
 # start the 2nd phase
-
 FROM nginx
+
+#Important for AWS deployment. Exposing port 80 on AWS [THIS ONLY WORKS FOR AWS]
+EXPOSE 80
 
 # Copy /app/build from phase 1
 COPY --from=builder /app/build /usr/share/nginx/html
