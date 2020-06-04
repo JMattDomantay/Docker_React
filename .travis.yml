@@ -1,0 +1,15 @@
+# NOTE: THIS IS AN AUTOMATED DONE BY TRACIS
+#We need sudo use
+sudo : required
+# we need docker pre installed
+services :
+    - docker
+# configurations to be installe before deployment/testing
+before_install:
+    - docker build -t johnmatthewd/docker-reactv1.2 -f Dockerfile.dev . 
+
+#Series of commands that are needed run when the tests are needed to be exec. Travis will be watching this closely  
+#  CI = true allows travis to runt tests
+
+script:
+    - docker run -e CI=true johnmatthewd/docker-reactv1.2 npm run test 
