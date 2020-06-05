@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edited via branch 
+          PAKYU ICE
         </p>
         <a
           className="App-link"
